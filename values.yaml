@@ -1,0 +1,19 @@
+## Kafka Configuration
+kraft:
+  enabled: true
+listeners:
+  ## We're using PLAINTEXT to disable any authentication
+  ## References:
+  ##    - https://github.com/bitnami/charts/issues/18659
+  ##    - https://github.com/bitnami/charts/issues/18793
+  ## This is not recommended. Do not use in production :)
+  client:
+    protocol: PLAINTEXT
+  controller:
+    protocol: PLAINTEXT
+  interbroker:
+    protocol: PLAINTEXT
+  external:
+    protocol: PLAINTEXT
+controller:
+  replicaCount: 3
